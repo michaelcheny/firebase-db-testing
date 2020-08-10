@@ -1,0 +1,90 @@
+.form-container {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-right: 1px solid black;
+}
+
+.meal-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 2em;
+}
+
+.meal-form input {
+  background: none;
+  border: none;
+  height: 50px;
+  outline: none;
+  margin: 0.5em 0;
+  border-bottom: 1px solid black;
+}
+
+.meal-form textarea {
+  border-bottom: 1px solid black;
+  background: none;
+  height: 100px;
+  margin: 0.5em 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+}
+
+.meal-form .submit-btn {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  border: none;
+}
+
+.meal-form .submit-btn:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.meal-container {
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 100vh;
+}
+
+.meal-box:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.015);
+}
+
+.meal-box {
+  padding: 1em;
+}
+
+.meal-box .meal {
+  font-weight: 600;
+  font-size: larger;
+}
+
+.meal-box .meal .time {
+  float: right;
+  font-size: 13px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.App {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 40% 60%;
+      grid-template-columns: 40% 60%;
+  font-size: larger;
+}
+
+h1 {
+  text-align: center;
+  padding: 1em 0.5em;
+}
+/*# sourceMappingURL=App.css.map */
