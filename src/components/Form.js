@@ -5,9 +5,10 @@ import { format } from "date-fns";
 
 const Form = () => {
   const { register, handleSubmit, reset } = useForm();
+
   const onSubmit = (data) => {
     const content = data.content.split(",").map((i) => i.trim());
-
+    // debugger;
     firebase
       .firestore()
       .collection("foods")
@@ -23,6 +24,7 @@ const Form = () => {
       description: "",
     });
   };
+
   return (
     <>
       <h1>Food Form</h1>

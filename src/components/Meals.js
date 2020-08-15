@@ -2,36 +2,51 @@
 import React, { useState, useEffect } from "react";
 import firebase from "../firebase";
 
-const filterMeals = () => {
+// const filterMeals = () => {
+//   const [meals, setMeals] = useState([]);
+
+// useEffect(() => {
+//   firebase
+//     .firestore()
+//     .collection("foods")
+//     // .where("content", "array-contains", "milk")
+//     // .orderBy("time", "desc")
+//     .get()
+//     .then((snapshot) => {
+//       const foods = snapshot.docs.map((doc) => ({
+//         id: doc.id,
+//         ...doc.data(),
+//       }));
+//       setMeals(foods);
+//     }, []);
+//   // .onSnapshot((snapshot) => {
+//   //   const foods = snapshot.docs.map((doc) => ({
+//   //     id: doc.id,
+//   //     ...doc.data(),
+//   //   }));
+//   //   setMeals(foods);
+//   });
+//   });
+//   return meals;
+// };
+
+const Meals = () => {
+  // const meals = filterMeals();
   const [meals, setMeals] = useState([]);
 
-  useEffect(() => {
-    firebase
-      .firestore()
-      .collection("foods")
-      .where("content", "array-contains", "milk")
-      // .orderBy("time", "desc")
-      .get()
-      .then((snapshot) => {
+  firebase
+    .firestore()
+    .collection("foods")
+    .onSnapshot(
+      (snapshot) => {
         const foods = snapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
         }));
         setMeals(foods);
-      }, []);
-    // .onSnapshot((snapshot) => {
-    //   const foods = snapshot.docs.map((doc) => ({
-    //     id: doc.id,
-    //     ...doc.data(),
-    //   }));
-    //   setMeals(foods);
-    // });
-  });
-  return meals;
-};
-
-const Meals = () => {
-  const meals = filterMeals();
+      },
+      (err) => console.log(`Error occured: ${err}`)
+    );
 
   return (
     <>
